@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link href="style_google.css" rel="stylesheet" type="text/css">
 </head>
@@ -13,7 +14,7 @@
         <li>Gmail</li>
         <li>Images</li>
         <li><img src="https://cdn.icon-icons.com/icons2/933/PNG/512/show-apps-button_icon-icons.com_72551.png"
-                 style="width: 20px; height: 20px;"></li>
+                 style="width: 20px; height: 20px"></li>
         <li>
             <button>Sign in</button>
         </li>
@@ -27,13 +28,13 @@
     <div id="main">
 
         <img src="http://www.luiss.it/sites/www.luiss.it/files/images/notices/30/st-patricks-day-2016-4834639321497600-hp2x.gif"
-             style="height: 250px; width: 700px">
+             style="height: 250px; max-width: 700px; width: 100%">
 
         <form>
-            <input style="width: 600px; height: 30px; " type="text"/>
+            <input style="max-width: 600px; width: 80%; height: 30px; " type="text" placeholder="Search Something Duh!"/>
         </form>
 
-        <div id="buts" style="padding-top: 10px">
+        <div id="buts" style="padding: 5px">
             <button>Google Search</button>
             <button>I'm Feeling Lucky</button>
         </div>
@@ -63,14 +64,18 @@
         <p>India</p>
     </div>
 
-    <div style="background-color: lightgray; width: 100%; height: 20px" class="rem-pad">
+    <div style="background-color: lightgray; width: 100%; height: 20px" class="ul-row">
         <ul class="ele-bot">
             <li>Advertising</li>
             <li>Business</li>
+        </ul>
+
+        <ul class="ele-bot" style="float: right">
             <li>About</li>
             <li>Privacy</li>
             <li>Terms</li>
         </ul>
+
     </div>
 
 </div>

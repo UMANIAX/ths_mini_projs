@@ -17,7 +17,7 @@
 
 }
 
-#buts button {
+#buts button{
     height: 40px;
     width: 200px;
     font-size: 20px;
@@ -37,6 +37,6 @@
     padding-right: 7px;
 }
 
-.rem-pad ul{
-    white-space: nowrap;
+.ul-row ul{
+    display: inline-block;
 }
