@@ -1,3 +1,42 @@
-.navbar > li{
+* { margin:0; padding:0; }
+
+.ele-nav li{
     display: inline-block;
+    margin-left: auto;
+    align-items: center;
+    padding: 7px;
+    vertical-align: middle;
+}
+
+.navbar {
+    float: right;
+}
+
+#main {
+    padding-top: 80px;
+
+}
+
+#buts button {
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+    display: inline-block;
+}
+
+#univ_inline div, p {
+    display: inline-block;
+}
+
+#tag_p p {
+    display: inline-block;
+}
+
+.ele-bot li {
+    display: inline-block;
+    padding-right: 7px;
+}
+
+.rem-pad ul{
+    white-space: nowrap;
 }
