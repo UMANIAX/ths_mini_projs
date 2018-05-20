@@ -7,3 +7,18 @@
     background-color: #230739;
     border: #230739;
 }
+
+.foot-type p{
+
+    color: darkgrey;
+    font-size: 17px;
+    display: inline-block;
+    margin: 15px;
+}
+
+.foot-img {
+
+    height: 35px;
+    width: 35px;
+    float: right;
+}
