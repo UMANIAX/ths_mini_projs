@@ -1,3 +1,24 @@
+.bg-nav {
+
+    background-color: #323754;
+}
+
+.nav-text {
+
+    font-size: 30px;
+}
+
+.nav-img {
+
+    margin-top: -10px;
+    height: 35px;
+}
+
+.navbar-toggler .toggler-example {
+
+    cursor: pointer;
+}
+
 .font-text {
 
     font-family: sans-serif;
