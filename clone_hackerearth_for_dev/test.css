@@ -1,0 +1,10 @@
+.navbar-header {
+    position: relative;
+}
+
+.navbar-toggle {
+    position: absolute;  // this takes the button out of the regular document flow
+left: 100%;    // this will stick the button on the outside right edge -- reduce this if you want the button more inside of the navbar-header
+top: 50%;
+    transform: translateY(-50%);  // this & the rule above it will center the button vertically relative to the navbar-header
+}

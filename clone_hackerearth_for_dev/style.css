@@ -1,3 +1,5 @@
+* { margin: 0; padding: 0; }
+
 .bg-nav {
 
     background-color: #323754;
@@ -12,11 +14,6 @@
 
     margin-top: -10px;
     height: 35px;
-}
-
-.navbar-toggler .toggler-example {
-
-    cursor: pointer;
 }
 
 .font-text {
@@ -42,4 +39,16 @@
     height: 35px;
     width: 35px;
     float: right;
+}
+
+.ham-menu {
+
+    background-color: #323754;
+    font-size: 20px;
+    width: 250px;
+}
+
+.hm-txt {
+
+    background-color: #323754;
 }
