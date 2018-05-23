@@ -52,3 +52,22 @@
 
     background-color: #323754;
 }
+
+.nav-mrg {
+
+    margin: 5px;
+}
+
+.src-field-mrg {
+
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.src-mrg {
+
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
