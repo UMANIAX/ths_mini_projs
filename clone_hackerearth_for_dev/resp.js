@@ -1,3 +1,7 @@
+let side_ind = 0;
+let big_vis = 0;
+let scroll_tog = 1;
+
 function hide_small() {
 
     $('#side-ham').hide();
@@ -6,55 +10,86 @@ function hide_small() {
 
 function norm_nav (){
 
-    hide_small();
-    $('#nrm-sc-nav').show();
+    if (!big_vis){
+
+        big_vis = 1;
+        $('#nrm-sc-nav').show();
+        hide_small();
+    }
+
     $('#left-nav').css('margin-left', '-200px');
     $('#right-nav').css('margin-left', '500px');
-    scroll_toggle(0);
+
+    if (!scroll_tog)
+        scroll_toggle();
 }
 
 function norm_nav_b1 (){
 
-    hide_small();
-    $('#nrm-sc-nav').show();
+    if (!big_vis){
+
+        big_vis = 1;
+        $('#nrm-sc-nav').show();
+        hide_small();
+    }
+
     $('#left-nav').css('margin-left', '-75px');
     $('#right-nav').css('margin-left', '250px')
-    scroll_toggle(0);
+
+    if (!scroll_tog)
+        scroll_toggle();
 }
 
 function norm_nav_b2 () {
 
-    hide_small();
-    $('#nrm-sc-nav').show();
+    if (!big_vis){
+
+        big_vis = 1;
+        $('#nrm-sc-nav').show();
+        hide_small();
+    }
+
     $('#left-nav').css('margin-left', '-5px')
     $('#right-nav').css('margin-left', '50px')
-    scroll_toggle(0);
+
+    if (!scroll_tog)
+        scroll_toggle();
 }
 
 function norm_nav_b3 (){
 
-    hide_small();
-    $('#nrm-sc-nav').show();
+    if (!big_vis){
+
+        big_vis = 1;
+        $('#nrm-sc-nav').show();
+        hide_small();
+    }
+
     $('#left-nav').css('margin-left', '-50px')
     $('#right-nav').css('margin-left', '50px')
-    scroll_toggle(0);
+
+    if (!scroll_tog)
+        scroll_toggle();
 }
 
-function small_nav (hide_ind){
+function small_nav (){
 
-    if (hide_ind === 1){
+    if (side_ind){
 
-        scroll_toggle(hide_ind);
+        if (scroll_tog)
+            scroll_toggle();
+
         $('#side-ham').show();
     }
 
     $('#nrm-sc-nav').hide();
     $('#sml-sc-nav').show();
+    big_vis = 0;
 }
 
-function scroll_toggle(hide_ind){
+function scroll_toggle(){
 
-    if (hide_ind === 1) {
+    if (scroll_tog) {
 
         $('html').animate({scrollTop: 0}, 1000);
         $('body').css('overflow', 'hidden');
@@ -62,15 +97,24 @@ function scroll_toggle(hide_ind){
 
     else
         $('body').css('overflow', 'visible');
+
+    scroll_tog = 1 - scroll_tog;
 }
 
+function side_men() {
+
+    $("#side-ham").toggle();
+    side_ind = 1 - side_ind;
+    scroll_toggle();
+}
 
 $(document).ready(function(){
 
-    let k = 0;
+    $('#side-ham').hide();
+    $("#ham-but-arr").hide()
 
     if ($(window).width() < 1025)
-        small_nav(k);
+        small_nav();
 
     else if ($(window).width() < 1200)
         norm_nav_b3();
@@ -86,8 +130,10 @@ $(document).ready(function(){
 
     $(window).resize(function () {
 
+        // event.preventDefault();
+
         if ($(this).width() < 1025)
-            small_nav(k);
+            small_nav();
 
         else if ($(this).width() < 1200)
             norm_nav_b3();
@@ -104,8 +150,15 @@ $(document).ready(function(){
 
     $("#ham-but").click(function () {
 
-        $("#side-ham").toggle();
-        k = 1 - k;
-        scroll_toggle(k);
+        side_men();
+        $("#ham-but-arr").show();
+        $("#ham-but").hide();
+    })
+
+    $("#ham-but-arr").click(function () {
+
+        side_men();
+        $("#ham-but-arr").hide();
+        $("#ham-but").show();
     })
 });
