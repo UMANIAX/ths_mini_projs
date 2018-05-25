@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="scard.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -83,12 +82,14 @@
 
         <nav id="sml-sc-nav" class="navbar navbar-expand-sm bg-nav row">
 
-            <a id="ham-but" class="btn ml-2 navbar-nav"><i class="fa fa-bars" style="background-color: white"></i></a>
+            <a id="ham-but" class="btn ml-2 navbar-nav"><i class="fa fa-bars"
+                                                           style="background-color: white; font-size: 20px"></i></a>
 
-            <a id="ham-but-arr" class="btn ml-2 navbar-nav"><i class="fa fa-arrow-left" style="color: white"></i></a>
+            <a id="ham-but-arr" class="btn ml-2 navbar-nav"><i class="fa fa-arrow-left"
+                                                               style="color: white; font-size: 30px"></i></a>
 
             <div class="text-light navbar-nav mx-auto pr-5"><a><img class="nav-img"
-                                                               src="http://engineering.hackerearth.com/images/logo_he.png"><span
+                                                                    src="http://engineering.hackerearth.com/images/logo_he.png"><span
                     class="nav-text">ackerearth</span></a></div>
 
         </nav> <!-- Small Nav -->
@@ -105,20 +106,24 @@
 
             <div class="col-sm-2" style="background-color: #F2F3F4"></div> <!-- Empty -->
 
-            <div class="col-sm-6 border-right" style="background-color: #F2F3F4; padding-top: 35px">
+            <div id="left-light-grey" class="col-sm-6 border-right"
+                 style="background-color: #F2F3F4; padding-top: 35px">
 
-                <div class=""><h3 style="font-family: cursive;">Hackathons, Programming Challenges & Coding
-                    Competitions</h3></div>
+                <div id="title_desp"><h3 style="font-family: cursive;">Hackathons, Programming Challenges & Coding
+                    Competitions</h3></div> <!-- hackerearth title -->
 
-                <div class="border-bottom border-top mt-2 mt-3"
+                <div id="active-nav" class="border-bottom border-top mt-2 mt-3"
                      style="padding-bottom: 10px; width: 90%; max-width: 1100px">
-                    <a class="pt-1 pr-3 pl-3 text-light"
-                       style="padding-bottom: 33px; background-color: dodgerblue; clip-path: polygon(100% 0, 100% 66%, 66% 66%, 50% 85%, 36% 66%, 0 66%, 0 0);">LIVE
-                        <span style="background-color: grey"> 5</span></a>
-                    <a class="pt-1 pb-3 ml-2"
-                       style="clip-path: polygon(100% 0, 100% 66%, 66% 66%, 50% 85%, 36% 66%, 0 66%, 0 0)">UPCOMING</a>
-                    <a class="pt-1 pb-3 ml-2">PREVIOUS</a>
-                </div>
+                    <a id="live" class="pt-1 pr-3 pl-3"
+                       style="cursor: pointer; padding-bottom: 33px; background-color: dodgerblue; clip-path: polygon(100% 0, 100% 66%, 66% 66%, 50% 85%, 36% 66%, 0 66%, 0 0);">LIVE
+                        <span class="badge badge-danger ml-1"> 5</span></a>
+                    <a id="upcmng" class="pt-1 pr-3 pl-3"
+                       style="cursor: pointer; padding-bottom: 33px; clip-path: polygon(100% 0, 100% 66%, 66% 66%, 50% 85%, 36% 66%, 0 66%, 0 0);">UPCOMING
+                        <span class="badge badge-danger ml-1"> 7</span></a>
+                    <a id="prev" class="pt-1 pr-3 pl-3"
+                       style="cursor: pointer; padding-bottom: 33px; clip-path: polygon(100% 0, 100% 66%, 66% 66%, 50% 85%, 36% 66%, 0 66%, 0 0);">PREVIOUS</a>
+                </div> <!-- Upcoming, Active, Previous -->
+
                 <div class="row mt-4">
 
                     <div class="card bgcard card-dim m-1">
@@ -785,7 +790,8 @@
 
             </div> <!-- Headings and Cards -->
 
-            <div class="col-sm-4" style="background-color: #E5E7E9"></div> <!-- To be used for filters -->
+            <div id="right-dark-grey" class="col-sm-4" style="background-color: #E5E7E9"></div>
+            <!-- To be used for filters -->
         </div> <!-- grey and dark grey -->
 
         <div class="fixed-bottom position-static">
