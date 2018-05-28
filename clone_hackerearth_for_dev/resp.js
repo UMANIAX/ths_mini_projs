@@ -133,19 +133,19 @@ function dual_color_body_cond (){
     if ($(window).width() < 1035){
 
         $('#right-dark-grey').hide();
-        $('#left-light-grey').removeClass('col-sm-6');
+        $('#left-light-grey').removeClass('col-sm-9');
         $('#left-light-grey').addClass('col');
-        $('#title_desp').addClass('text-center');
         $('#active-nav').hide();
+        $('#light-grey-container').removeClass('float-right');
     }
 
     else {
 
         $('#right-dark-grey').show();
-        $('#left-light-grey').addClass('col-sm-6');
+        $('#left-light-grey').addClass('col-sm-9');
         $('#left-light-grey').removeClass('col');
-        $('#title_desp').removeClass('text-center');
         $('#active-nav').show();
+        $('#light-grey-container').addClass('float-right');
     }
 }
 
