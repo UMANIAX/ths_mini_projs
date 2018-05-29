@@ -147,6 +147,16 @@ function dual_color_body_cond (){
         $('#active-nav').show();
         $('#light-grey-container').addClass('float-right');
     }
+
+    if ($(window).width() < 1542){
+
+        $('#light-grey-container').css('margin-right', '0px');
+    }
+
+    else {
+
+        $('#light-grey-container').css('margin-right', '-100px');
+    }
 }
 
 function init_cond(){
