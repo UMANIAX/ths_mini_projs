@@ -1,0 +1,29 @@
+.props {
+
+    border: solid 1px black;
+    height: 500px;
+    width: 500px;
+}
+
+.props > img {
+
+    align-content: center;
+    padding: 10px;
+    height: 400px;
+    width: 450px;
+}
+
+.slider {
+
+    border: solid 1px black;
+    padding: 10px;
+    height: 550px;
+    width: 600px;
+    align-items: center;
+}
+
+.slider > div{
+
+    display: inline-block;
+    vertical-align: middle;
+}

@@ -71,3 +71,12 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+.ev-bor {
+
+    border: solid 2px #E2E6E7;
+    vertical-align: middle;
+    height: 0px;
+    margin-top: 27px;
+    border-radius: 5px;
+}
