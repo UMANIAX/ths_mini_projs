@@ -173,68 +173,73 @@ $(document).ready(function(){
 
     init_cond();
 
-    $(window).resize(function () {
-        init_cond();
+});
+
+$(window).resize(function () {
+    init_cond();
+});
+
+$("#ham-but").click(function () {
+
+    side_men();
+    $("#ham-but-arr").show();
+    $("#ham-but").hide();
+});
+
+$("#ham-but-arr").click(function () {
+
+    side_men();
+    $("#ham-but-arr").hide();
+    $("#ham-but").show();
+});
+
+$('#active-nav .a-but').on('click', function () {
+
+    $('#active-nav .a-but').removeClass('text-light');
+    $('#active-nav .a-but').css('background-color', '');
+    $(this).css('background-color', 'dodgerblue');
+    $(this).addClass('text-light');
+
+    let ctype_num = $(this).data('anav');
+    let goto_div = $(this);
+
+    $('.all-cards .event-det').each(function () {
+
+        if($(this).data('cardtype') === ctype_num)
+            goto_div = $(this);
+
     });
 
-    $("#ham-but").click(function () {
+    let pos = goto_div.offset();
+    pos.top -= 30;
 
-        side_men();
-        $("#ham-but-arr").show();
-        $("#ham-but").hide();
+    $('html, body').animate({
+        scrollTop: pos.top
+    }, 1000);
+});
+
+$(window).scroll(function (event) {
+    let win_scroll = $(window).scrollTop();
+
+    if (win_scroll < 230)
+        return;
+
+    let curr_div_num = '0';
+
+    $('.all-cards .event-det').each(function () {
+
+        if($(this).offset().top - 31 <= win_scroll)
+            curr_div_num = $(this).data('cardtype');
     });
 
-    $("#ham-but-arr").click(function () {
+    $('#active-nav .a-but').removeClass('text-light');
+    $('#active-nav .a-but').css('background-color', '');
 
-        side_men();
-        $("#ham-but-arr").hide();
-        $("#ham-but").show();
+    $('#active-nav .a-but').each(function () {
+
+        if ($(this).data('anav') === curr_div_num){
+            $(this).css('background-color', 'dodgerblue');
+            $(this).addClass('text-light');
+        }
     });
-
-    $('#active-nav .a-but').on('click', function () {
-
-        $('#active-nav .a-but').removeClass('text-light');
-        $('#active-nav .a-but').css('background-color', '');
-        $(this).css('background-color', 'dodgerblue');
-        $(this).addClass('text-light');
-
-        let ctype_num = $(this).data('anav');
-        let goto_div = $(this);
-
-        $('.all-cards .event-det').each(function () {
-
-            if($(this).data('cardtype') === ctype_num)
-                goto_div = $(this);
-
-        });
-
-        let pos = goto_div.offset();
-        pos.top -= 30;
-
-        $('html, body').animate({
-            scrollTop: pos.top
-        }, 1000);
-    });
-
-    // $(window).scroll(function (event) {
-    //     let win_scroll = $(window).scrollTop();
-    //     let curr_div_num = '0';
-    //
-    //     $('.all-cards .event-det').each(function () {
-    //
-    //         if($(this).offset().top - 30 < win_scroll)
-    //             curr_div_num = $(this).data('cardtype');
-    //     });
-    //
-    //     $('#active-nav .a-but').removeClass('text-light');
-    //     $('#active-nav .a-but').css('background-color', '');
-    //
-    //     $('#active-nav .event-det').each(function () {
-    //
-    //         if ($(this).data('anav') === curr_div_num){
-    //             $(this).css('background-color', 'dodgerblue');
-    //             $(this).addClass('text-light');
-    //         }
-    //     });
-    // });
 });

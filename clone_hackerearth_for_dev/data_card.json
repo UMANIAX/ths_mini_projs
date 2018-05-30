@@ -1,0 +1,27 @@
+{
+  "card1": {
+
+    "CompanyName": "Param.ai",
+    "Position": "Intern",
+    "Role": "Param.ai Web-Dev",
+    "Contest-Type": "Hiring",
+    "Start-Time": "13:00",
+    "Start-Date": "21/06/2018",
+    "End-Time": "13:00",
+    "End-Date": "23/06/2018",
+    "Image": "https://whatastory.in/wp-content/uploads/2017/12/Param-2.jpg"
+  },
+
+  "card2": {
+
+    "CompanyName": "Microsoft",
+    "Position": "Senior Developer",
+    "Role": "Back-End Development",
+    "Contest-Type": "Hackathon",
+    "Start-Time": "17:00",
+    "Start-Date": "24/06/2018",
+    "End-Time": "13:00",
+    "End-Date": "25/06/2018",
+    "Image": "https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2017/01/microsoft-garage.jpg?itok=GVDDb-B-"
+  }
+}
