@@ -8,9 +8,9 @@ function hide_small() {
     $('#sml-sc-nav').hide();
 }
 
-function norm_nav (){
+function norm_nav() {
 
-    if (!big_vis){
+    if (!big_vis) {
 
         big_vis = 1;
         $('#nrm-sc-nav').show();
@@ -24,9 +24,9 @@ function norm_nav (){
         scroll_toggle();
 }
 
-function norm_nav_b1 (){
+function norm_nav_b1() {
 
-    if (!big_vis){
+    if (!big_vis) {
 
         big_vis = 1;
         $('#nrm-sc-nav').show();
@@ -40,9 +40,9 @@ function norm_nav_b1 (){
         scroll_toggle();
 }
 
-function norm_nav_b2 () {
+function norm_nav_b2() {
 
-    if (!big_vis){
+    if (!big_vis) {
 
         big_vis = 1;
         $('#nrm-sc-nav').show();
@@ -56,9 +56,9 @@ function norm_nav_b2 () {
         scroll_toggle();
 }
 
-function norm_nav_b3 (){
+function norm_nav_b3() {
 
-    if (!big_vis){
+    if (!big_vis) {
 
         big_vis = 1;
         $('#nrm-sc-nav').show();
@@ -72,9 +72,9 @@ function norm_nav_b3 (){
         scroll_toggle();
 }
 
-function small_nav (){
+function small_nav() {
 
-    if (side_ind){
+    if (side_ind) {
 
         if (scroll_tog)
             scroll_toggle();
@@ -87,7 +87,7 @@ function small_nav (){
     big_vis = 0;
 }
 
-function scroll_toggle(){
+function scroll_toggle() {
 
     if (scroll_tog) {
 
@@ -104,7 +104,7 @@ function scroll_toggle(){
 function side_men() {
 
     $("#side-ham").animate({
-        width : 'toggle'
+        width: 'toggle'
     });
     side_ind = 1 - side_ind;
     scroll_toggle();
@@ -128,9 +128,9 @@ function nav_bar_cond() {
         norm_nav();
 }
 
-function dual_color_body_cond (){
+function dual_color_body_cond() {
 
-    if ($(window).width() < 1035){
+    if ($(window).width() < 1035) {
 
         $('#right-dark-grey').hide();
         $('#left-light-grey').removeClass('col-sm-9');
@@ -148,7 +148,7 @@ function dual_color_body_cond (){
         $('#light-grey-container').addClass('float-right');
     }
 
-    if ($(window).width() < 1542){
+    if ($(window).width() < 1542) {
 
         $('#light-grey-container').css('margin-right', '0px');
     }
@@ -159,19 +159,50 @@ function dual_color_body_cond (){
     }
 }
 
-function init_cond(){
+function init_cond() {
 
     nav_bar_cond();
     dual_color_body_cond();
 }
 
-$(document).ready(function(){
+var temp;
+
+function card_init() {
+
+    let URL = 'data_card.json';
+    let curr_card = $('#live-cards .card');
+
+    $.getJSON(URL, function (data) {
+
+        for (let i in data) {
+
+            let clone_card = curr_card.clone();
+            curr_card.attr('id', data[i].CardId);
+
+            if (i !== 0)
+                $('#live-cards').append(curr_card);
+
+            let curr_id = '#' + data[i].CardId;
+            $(curr_id + ' > img').attr('src', data[i].CompetitionImage);
+            $(curr_id + ' .card-img-overlay img').attr('src', data[i].CompanyImage);
+            $(curr_id + ' .card-img-overlay p').append(data[i].CompanyName);
+            $(curr_id + ' .card-img-overlay span').append(data[i].Position);
+            $(curr_id + ' .card-body .contest-type').append(data[i].ContestType);
+            $(curr_id + ' .card-body .margt-p').append(data[i].Role);
+
+            curr_card = clone_card;
+        }
+    });
+}
+
+$(document).ready(function () {
 
     $('#side-ham').hide();
     $("#ham-but-arr").hide();
     $('#live').addClass('text-light');
 
     init_cond();
+    card_init();
 
 });
 
@@ -205,7 +236,7 @@ $('#active-nav .a-but').on('click', function () {
 
     $('.all-cards .event-det').each(function () {
 
-        if($(this).data('cardtype') === ctype_num)
+        if ($(this).data('cardtype') === ctype_num)
             goto_div = $(this);
 
     });
@@ -228,7 +259,7 @@ $(window).scroll(function (event) {
 
     $('.all-cards .event-det').each(function () {
 
-        if($(this).offset().top - 31 <= win_scroll)
+        if ($(this).offset().top - 31 <= win_scroll)
             curr_div_num = $(this).data('cardtype');
     });
 
@@ -237,7 +268,7 @@ $(window).scroll(function (event) {
 
     $('#active-nav .a-but').each(function () {
 
-        if ($(this).data('anav') === curr_div_num){
+        if ($(this).data('anav') === curr_div_num) {
             $(this).css('background-color', 'dodgerblue');
             $(this).addClass('text-light');
         }

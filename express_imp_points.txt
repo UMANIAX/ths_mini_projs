@@ -1,0 +1,29 @@
+Express Documentation Notes: -
+
+1. You can provide multiple callback functions that behave like middleware to handle a request.
+The only exception is that these callbacks might invoke next('route') to bypass the remaining route callbacks.
+
+2. Resolves conflicting request by responding via the first match route.
+
+3. More than one callback function can handle a route (make sure you specify the next object).
+
+4. Middleware functions can perform the following tasks:
+
+   Execute any code.
+   Make changes to the request and the response objects.
+   End the request-response cycle.
+   Call the next middleware in the stack.
+
+5. If the current middleware function does not end the request-response cycle,
+it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
+
+6. Middleware is executed before call-back function.
+
+7. The order of middleware loading is important: middleware functions that are loaded first are also executed first.
+
+8. Middleware functions are functions that have access to the request object (req), the response object (res),
+and the next middleware function in the application’s request-response cycle.
+The next middleware function is commonly denoted by a variable named next.
+
+9. To skip the rest of the middleware functions from a router middleware stack, call next('route') to pass control to the next route.
+'route' is nothing but an url.

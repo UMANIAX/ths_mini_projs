@@ -1,0 +1,74 @@
+.bgcard {
+
+    background-color: #F2F3F4;
+    border-color: #F2F3F4;
+}
+
+.cbodybg {
+
+    background-color: white;
+}
+
+.font-type {
+
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: darkgrey;
+}
+
+.margt-p {
+
+    margin-top: -10px;
+}
+
+.norm-font {
+
+    font-size: medium;
+    color:  black;
+}
+
+.p-pad {
+
+    padding: 5px;
+}
+
+.card-dim {
+
+    height: 400px;
+    width: 250px;
+}
+
+.img-dim {
+
+    height: 150px;
+    width: 248px;
+}
+
+.img-ol-dim {
+
+    height: 155px;
+    width: 250px;
+}
+
+.img-ol-dim-sub {
+
+    background-image: url(../images/topblackn.png);
+    margin: -5px;
+    height: 40px;
+}
+
+.comp_name {
+
+    margin-top: 10px;
+}
+
+.comp-pos {
+
+    margin-top: 80px;
+}
+
+.time-dim {
+
+    padding-left: 44px;
+    padding-right: 43px;
+}

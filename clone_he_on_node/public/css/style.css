@@ -1,0 +1,82 @@
+* { margin: 0; padding: 0; }
+
+.bg-nav {
+
+    background-color: #323754;
+}
+
+.nav-text {
+
+    font-size: 30px;
+}
+
+.nav-img {
+
+    margin-top: -10px;
+    height: 35px;
+}
+
+.font-text {
+
+    font-family: sans-serif;
+}
+
+.bgc {
+    background-color: #230739;
+    border: #230739;
+}
+
+.foot-type p{
+
+    color: darkgrey;
+    font-size: 17px;
+    display: inline-block;
+    margin: 15px;
+}
+
+.foot-img {
+
+    height: 35px;
+    width: 35px;
+    float: right;
+}
+
+.ham-menu {
+
+    background-color: #323754;
+    font-size: 20px;
+    width: 250px;
+}
+
+.hm-txt {
+
+    background-color: #323754;
+}
+
+.nav-mrg {
+
+    margin: 5px;
+}
+
+.src-field-mrg {
+
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.src-mrg {
+
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.ev-bor {
+
+    border: solid 2px #E2E6E7;
+    vertical-align: middle;
+    height: 0px;
+    margin-top: 27px;
+    border-radius: 5px;
+}
