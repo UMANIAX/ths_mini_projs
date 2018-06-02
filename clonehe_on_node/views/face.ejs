@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/scard.css" type="text/css">
+    <link rel="stylesheet" href="css/right-dark-gray.css" type="text/css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -17,6 +18,9 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!-- Google Maps API -->
+
 </head>
 <body>
 
@@ -332,7 +336,11 @@
 
             </div> <!-- Headings and Cards -->
 
-            <div id="right-dark-grey" class="col-sm-3" style="background-color: #E5E7E9"></div>
+            <div id="right-dark-grey"  align="center" class="col-sm-3" style="background-color: #E5E7E9">
+
+                <div id="map-goes-here"></div>
+
+            </div>
             <!-- To be used for filters -->
         </div> <!-- grey and dark grey -->
 
@@ -400,7 +408,13 @@
 
 </div>
 
-<script src="/js/resp.js"></script>
+<!-- JS files -->
+<script src="js/resp.js"></script>
+<!--<script src="js/mapsjs.js"></script>-->
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2OPzJF0nxH6Ud5zDrIjMeo1HDVqxE7Uc&callback=initMap"
+        async defer></script>
 
 </body>
 </html>

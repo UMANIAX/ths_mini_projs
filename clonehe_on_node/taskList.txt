@@ -1,0 +1,6 @@
+Tasks to be done
+
+// Reverse Geocode
+// Display Hackathon Addresses via markers
+-> Marker clustering
+-> Incorporating database to project

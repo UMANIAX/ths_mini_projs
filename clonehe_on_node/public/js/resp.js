@@ -1,8 +1,8 @@
 
-
 let side_ind = 0;
 let big_vis = 0;
 let scroll_tog = 1;
+let card_data;
 
 function hide_small() {
 
@@ -167,14 +167,14 @@ function init_cond() {
     dual_color_body_cond();
 }
 
-var temp;
-
 function card_init() {
 
     let URL = '/data_card.json';
     let curr_card = $('#live-cards .card');
 
     $.getJSON(URL, function (data) {
+
+        card_data = data
 
         for (let i in data) {
 
@@ -194,6 +194,24 @@ function card_init() {
 
             curr_card = clone_card;
         }
+
+        setTimeout(function () {
+
+            let geoCoder = new google.maps.Geocoder()
+
+            for (let i in data){
+
+                geoCoder.geocode({'address': data[i].CompAdd}, function (result, status) {
+
+                    let marker = new google.maps.Marker({
+
+                        map: map_show,
+                        position: result[0].geometry.location
+                    })
+                })
+            }
+
+        }, 1100)
     });
 }
 
@@ -276,3 +294,31 @@ $(window).scroll(function (event) {
         }
     });
 });
+
+// Map Functions -----------------------------------------------------------------------------------------------------------------------------------
+
+let lati;
+let longi;
+let map_show;
+
+function showPosition(position) {
+
+    lati = position.coords.latitude
+    longi = position.coords.longitude
+}
+
+function get_map() {
+
+    map_show = new google.maps.Map(document.getElementById('map-goes-here'), {
+        center: {lat: lati, lng: longi},
+        zoom: 15
+    });
+
+    var marker = new google.maps.Marker({position: {lat: lati, lng: longi}, map: map_show});
+}
+
+function initMap() {
+
+    navigator.geolocation.getCurrentPosition(showPosition);
+    setTimeout(get_map, 1000)
+}

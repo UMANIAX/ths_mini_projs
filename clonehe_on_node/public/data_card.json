@@ -10,7 +10,8 @@
     "EndTime": "13:00",
     "EndDate": "23/06/2018",
     "CompanyImage": "https://whatastory.in/wp-content/uploads/2017/12/Param-2.jpg",
-    "CompetitionImage": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201307/hackathon_660_071413062154.jpg"
+    "CompetitionImage": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201307/hackathon_660_071413062154.jpg",
+    "CompAdd": "ISB, Gachibowli, Hyderabad, Telangana 500032"
   },
 
   {
@@ -24,6 +25,7 @@
     "EndTime": "13:00",
     "EndDate": "25/06/2018",
     "CompanyImage": "http://www.osundefender.com/wp-content/uploads/2017/03/Microsoft-PESTEL-Analysis.jpg",
-    "CompetitionImage": "https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2017/01/microsoft-garage.jpg?itok=GVDDb-B-"
+    "CompetitionImage": "https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2017/01/microsoft-garage.jpg?itok=GVDDb-B-",
+    "CompAdd": "Microsoft, ISB Road, Nanakrmaguda, Gachibowli, Hyderabad, Telangana 500032"
   }
 ]
