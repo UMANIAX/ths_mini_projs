@@ -4,3 +4,4 @@ Tasks to be done
 // Display Hackathon Addresses via markers
 -> Marker clustering
 -> Incorporating database to project
+-> Learn to put data on mongo via json format
