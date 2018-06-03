@@ -1,7 +1,11 @@
-Tasks to be done
+Tasks to be done [ // Done, \\ Dropped, -> Remaining ]
 
 // Reverse Geocode
 // Display Hackathon Addresses via markers
--> Marker clustering
--> Incorporating database to project
--> Learn to put data on mongo via json format
+\\ Marker clustering
+// Incorporating database to project
+\\ Learn to put data on mongo via json format
+// Manage model files
+// Make Card data dynamic by linking database
+// Use poly-lines to connect hackathons from current destination
+-> Replace polylines with directions

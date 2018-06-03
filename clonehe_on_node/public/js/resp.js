@@ -1,4 +1,3 @@
-
 let side_ind = 0;
 let big_vis = 0;
 let scroll_tog = 1;
@@ -169,7 +168,7 @@ function init_cond() {
 
 function card_init() {
 
-    let URL = '/data_card.json';
+    let URL = '/get_card_det';
     let curr_card = $('#live-cards .card');
 
     $.getJSON(URL, function (data) {
@@ -208,6 +207,23 @@ function card_init() {
                         map: map_show,
                         position: result[0].geometry.location
                     })
+
+                    let line_coords = [
+
+                        {lat: lati, lng: longi},
+                        result[0].geometry.location
+                    ]
+
+                    let line_path =new google.maps.Polyline({
+
+                        path: line_coords,
+                        geodesic: true,
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2
+                    })
+
+                    line_path.setMap(map_show)
                 })
             }
 
@@ -297,8 +313,8 @@ $(window).scroll(function (event) {
 
 // Map Functions -----------------------------------------------------------------------------------------------------------------------------------
 
-let lati;
-let longi;
+let lati = 36;
+let longi = 138;
 let map_show;
 
 function showPosition(position) {
@@ -311,7 +327,7 @@ function get_map() {
 
     map_show = new google.maps.Map(document.getElementById('map-goes-here'), {
         center: {lat: lati, lng: longi},
-        zoom: 15
+        zoom: 11
     });
 
     var marker = new google.maps.Marker({position: {lat: lati, lng: longi}, map: map_show});
