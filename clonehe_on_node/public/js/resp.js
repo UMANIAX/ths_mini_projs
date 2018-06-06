@@ -166,9 +166,93 @@ function init_cond() {
     dual_color_body_cond();
 }
 
+function getTimeOnCards(data) {
+
+    let dateTimeNow = new Date()
+
+    let cardEvent = 'TBD'
+    let timeData = undefined;
+
+    let sD = data.StartDate
+    let sT = data.StartTime
+    let eD = data.EndDate
+    let eT = data.EndTime
+
+    let startDate = new Date(sD + 'T' + sT + ':00')
+    let endDate = new Date(eD + 'T' + eT + ':00')
+
+    if (dateTimeNow - endDate > 0) {
+
+        cardEvent = 'UC'
+        timeData = {start: sD}
+    }
+
+    else if (dateTimeNow - startDate > 0) {
+
+        cardEvent = 'L'
+
+        let timeDiff = endDate - dateTimeNow
+        let oneDay = 24 * 60 * 60 * 1000
+        let oneHour = oneDay / 24
+        let oneMin = oneHour / 60
+        let days = parseInt(timeDiff / oneDay)
+        timeDiff = timeDiff % oneDay
+        let hours = parseInt(timeDiff / oneHour)
+        timeDiff = timeDiff % oneHour
+        let mins = parseInt(timeDiff / oneMin)
+
+        timeData = {days: days, hours: hours, mins: mins}
+    }
+
+    else {
+
+        cardEvent = 'P'
+        timeData = {start: sD}
+    }
+
+    return {timeCat: cardEvent, tData: timeData}
+}
+
+function setTimeOnCards(curr_id) {
+
+    let nowMin = $(curr_id + ' .mins').text()
+    nowMin = parseInt(now) - 1
+
+    if (nowMin === -1) {
+
+        nowMin = 59
+
+        let nowHour = $(curr_id + ' .hours').text()
+        nowHour = parseInt(nowHour) - 1
+
+        if (nowHour === -1){
+
+            nowHour = 23
+
+            let nowDay = $(curr_id + ' .days').text()
+            nowDay = parseInt(nowDay) - 1
+
+            if (nowDay === -1){
+
+                nowDay = 0
+                nowHour = 0
+                nowMin = 0
+            }
+
+            $(curr_id + ' .days').text('' + nowDay)
+        }
+
+        $(curr_id + ' .hours').text('' + nowHour)
+    }
+
+    $(curr_id + ' .mins').text('' + nowMin)
+
+    setTimeout(setTimeOnCards, 60 * 1000, curr_id)
+}
+
 function card_init() {
 
-    let URL = '/get_card_det';
+    let URL = '/cards/get_card_det';
     let curr_card = $('#live-cards .card');
 
     $.getJSON(URL, function (data) {
@@ -179,17 +263,26 @@ function card_init() {
 
             let clone_card = curr_card.clone();
             curr_card.attr('id', data[i].CardId);
+            timeFuncData = getTimeOnCards(data[i])
 
-            if (i !== 0)
-                $('#live-cards').append(curr_card);
+            if (timeFuncData.timeCat === 'L') {
 
-            let curr_id = '#' + data[i].CardId;
-            $(curr_id + ' > img').attr('src', data[i].CompetitionImage);
-            $(curr_id + ' .card-img-overlay img').attr('src', data[i].CompanyImage);
-            $(curr_id + ' .card-img-overlay p').append(data[i].CompanyName);
-            $(curr_id + ' .card-img-overlay span').append(data[i].Position);
-            $(curr_id + ' .card-body .contest-type').append(data[i].ContestType);
-            $(curr_id + ' .card-body .margt-p').append(data[i].Role);
+                if(i !== 0)
+                    $('#live-cards').append(curr_card);
+
+                let curr_id = '#' + data[i].CardId;
+                $(curr_id + ' > img').attr('src', data[i].CompetitionImage);
+                $(curr_id + ' .card-img-overlay img').attr('src', data[i].CompanyImage);
+                $(curr_id + ' .card-img-overlay p').append(data[i].CompanyName);
+                $(curr_id + ' .card-img-overlay span').append(data[i].Position);
+                $(curr_id + ' .card-body.contest-type').append(data[i].ContestType);
+                $(curr_id + ' .card-body.margt-p').append(data[i].Role);
+                $(curr_id + ' .days').append(timeFuncData.tData.days);
+                $(curr_id + ' .hours').append(timeFuncData.tData.hours);
+                $(curr_id + ' .mins').append(timeFuncData.tData.mins);
+
+                setTimeout(setTimeOnCards, 60 * 1000, curr_id)
+            }
 
             curr_card = clone_card;
         }
@@ -198,7 +291,10 @@ function card_init() {
 
             let geoCoder = new google.maps.Geocoder()
 
-            for (let i in data){
+            for (let i in data) {
+
+                if (data[i].CompAdd === 'Online')
+                    continue
 
                 geoCoder.geocode({'address': data[i].CompAdd}, function (result, status) {
 
@@ -214,7 +310,7 @@ function card_init() {
                         result[0].geometry.location
                     ]
 
-                    let line_path =new google.maps.Polyline({
+                    let line_path = new google.maps.Polyline({
 
                         path: line_coords,
                         geodesic: true,
@@ -225,9 +321,11 @@ function card_init() {
 
                     line_path.setMap(map_show)
                 })
+
+
             }
 
-        }, 1100)
+        }, 1100) //Markers
     });
 }
 
@@ -327,10 +425,10 @@ function get_map() {
 
     map_show = new google.maps.Map(document.getElementById('map-goes-here'), {
         center: {lat: lati, lng: longi},
-        zoom: 11
+        zoom: 14
     });
 
-    var marker = new google.maps.Marker({position: {lat: lati, lng: longi}, map: map_show});
+    let marker = new google.maps.Marker({position: {lat: lati, lng: longi}, map: map_show});
 }
 
 function initMap() {

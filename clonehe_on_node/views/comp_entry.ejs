@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter New Competitions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <form> <!-- action="/post_card_info" method="POST">-->
+        Company Name: <input name="CompanyName" type="text"><br><br>
+        Position: <input name="Position" type="text"><br><br>
+        Role: <input name="Role" type="text"><br><br>
+        Contest Type: <input name="ContestType" type="text"><br><br>
+        Start Date: <input name="StartDate" type="date"><br><br>
+        Start Time: <input name="StartTime" type="time"><br><br>
+        End Date: <input name="EndDate" type="date"><br><br>
+        End Time: <input name="EndTime" type="time"><br><br>
+        Company Image: <input name="CompanyImage" type="url"><br><br>
+        Competition Image<input name="CompetitionImage" type="url"><br><br>
+        Company Address: <input name="CompAdd" type="text"><br><br>
+        <button type="submit">Make Entry</button>
+    </form>
+
+<script>
+
+    $('form').submit(function (event) {
+
+        let data_to_post = $('form').serialize()
+        let url = '/cards/post_card_info'
+
+        $.post(url, data_to_post, function (data, status, json_info) {
+
+            window.location = data.redirect
+        })
+    })
+
+</script>
+
+</body>
+</html>

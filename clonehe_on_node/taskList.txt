@@ -1,4 +1,4 @@
-Tasks to be done [ // Done, \\ Dropped, -> Remaining ]
+Tasks to be done [ // Done, \\ Dropped, -> Remaining, /\ Paused ]
 
 // Reverse Geocode
 // Display Hackathon Addresses via markers
@@ -8,4 +8,9 @@ Tasks to be done [ // Done, \\ Dropped, -> Remaining ]
 // Manage model files
 // Make Card data dynamic by linking database
 // Use poly-lines to connect hackathons from current destination
--> Replace polylines with directions
+// Make card entry page or use postman
+// Fix back button bug (Turns out it wasn't back buttin bug')
+/\ Replace polylines with directions: 'https://developers.google.com/maps/documentation/javascript/examples/directions-simple'
+// Change DB schema
+-> Put time on cards
+-> Categorise cards live upcmng prev
