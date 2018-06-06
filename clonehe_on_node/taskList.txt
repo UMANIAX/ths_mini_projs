@@ -12,5 +12,7 @@ Tasks to be done [ // Done, \\ Dropped, -> Remaining, /\ Paused ]
 // Fix back button bug (Turns out it wasn't back buttin bug')
 /\ Replace polylines with directions: 'https://developers.google.com/maps/documentation/javascript/examples/directions-simple'
 // Change DB schema
--> Put time on cards
+// Put time on cards
+-> Make Cards for Prev events
+-> Make Cards for UC eventsslac
 -> Categorise cards live upcmng prev

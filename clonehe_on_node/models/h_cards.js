@@ -17,5 +17,5 @@ let hackathon_schema = new Schema({
     CompAdd: String
 })
 
-let card_model = mongoose.model('h_model', hackathon_schema)
-module.exports = card_model // Makes 'card_model' a class
+let CardData = mongoose.model('h_model', hackathon_schema)
+module.exports = CardData // Makes 'card_model' a class
