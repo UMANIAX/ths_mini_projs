@@ -216,7 +216,7 @@ function getTimeOnCards(data) {
 function setTimeOnCards(curr_id) {
 
     let nowMin = $(curr_id + ' .mins').text()
-    nowMin = parseInt(now) - 1
+    nowMin = parseInt(nowMin) - 1
 
     if (nowMin === -1) {
 
