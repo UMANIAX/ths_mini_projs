@@ -275,8 +275,8 @@ function card_init() {
                 $(curr_id + ' .card-img-overlay img').attr('src', data[i].CompanyImage);
                 $(curr_id + ' .card-img-overlay p').append(data[i].CompanyName);
                 $(curr_id + ' .card-img-overlay span').append(data[i].Position);
-                $(curr_id + ' .card-body.contest-type').append(data[i].ContestType);
-                $(curr_id + ' .card-body.margt-p').append(data[i].Role);
+                $(curr_id + ' .card-body .contest-type').append(data[i].ContestType);
+                $(curr_id + ' .card-body .margt-p').append(data[i].Role);
                 $(curr_id + ' .days').append(timeFuncData.tData.days);
                 $(curr_id + ' .hours').append(timeFuncData.tData.hours);
                 $(curr_id + ' .mins').append(timeFuncData.tData.mins);

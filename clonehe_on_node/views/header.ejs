@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hacker-Earth Clone</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <base href="/"> <!-- Hepls in CSS linking -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/scard.css" type="text/css">
+    <link rel="stylesheet" href="css/right-dark-gray.css" type="text/css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<!-- Working with hamburger-->
+<div class="d-flex">
+
+    <div id="side-ham" class="ham-menu text-light">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item hm-txt">CHALLENGES</li>
+            <li class="list-group-item  hm-txt">PRACTICE</li>
+            <li class="list-group-item  hm-txt">COMPANIES</li>
+            <li class="list-group-item  hm-txt">LOGIN</li>
+            <li class="list-group-item  hm-txt">SIGN UP</li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="col">
+
+        <nav id="nrm-sc-nav" class="navbar navbar-expand-sm navbar-dark bg-nav row">
+
+            <div class="container">
+                <ul id="left-nav" class="navbar-nav" style="margin-left: -200px">
+                    <li class="nav-mrg">
+                        <a class="nav-link"><img style="height: 25px"
+                                                 src="http://engineering.hackerearth.com/images/logo_he.png"></a>
+                    </li>
+                    <li class="nav-mrg">
+                        <a class="nav-link" href="">CHALLANGES</a>
+                    </li>
+                    <li class="nav-mrg">
+                        <a class="nav-link" href="">PRACTICE</a>
+                    </li>
+                    <li class="nav-mrg">
+                        <a class="nav-link" href="">COMPANIES</a>
+                    </li>
+                </ul>
+
+                <ul id="right-nav" class="navbar-nav" style="margin-left: 500px">
+                    <li class="src-field-mrg">
+                        <input type="text" class="nav-link form-control form-control-sm bgc"
+                               style="font-size: small; width: 300px"
+                               placeholder="Search developers, problems etc">
+                    </li>
+                    <li class="src-mrg"> <!--Search button-->
+                        <button class="bgc"><i class="fa fa-search" style="color: lightgray; padding: 9.5px"></i>
+                        </button>
+                    </li>
+                    <li class="nav-mrg">
+                        <a class="nav-link"><img
+                                    src="https://hackerearth.global.ssl.fastly.net/static/circles/circle-header.png"></a>
+                    </li>
+                    <li class="nav-mrg">
+                        <a class="nav-link">LOGIN</a>
+                    </li>
+                    <li class="nav-mrg">
+                        <button class="btn btn-outline-danger">SIGN UP</button>
+                    </li>
+                </ul>
+            </div>
+
+        </nav> <!-- Normal Nav -->
+
+        <nav id="sml-sc-nav" class="navbar navbar-expand-sm bg-nav row">
+
+            <a id="ham-but" class="btn ml-2 navbar-nav"><i class="fa fa-bars"
+                                                           style="background-color: white; font-size: 20px"></i></a>
+
+            <a id="ham-but-arr" class="btn ml-2 navbar-nav"><i class="fa fa-arrow-left"
+                                                               style="color: white; font-size: 30px"></i></a>
+
+            <div class="text-light navbar-nav mx-auto pr-5"><a><img class="nav-img"
+                                                                    src="http://engineering.hackerearth.com/images/logo_he.png"><span
+                            class="nav-text">ackerearth</span></a></div>
+
+        </nav> <!-- Small Nav -->
+
+        <!-- Content Here -->
+
+

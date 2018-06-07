@@ -1,26 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Enter New Competitions</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
-<body>
+<% include header %>
 
+<div class="container" style="max-width: 500px; width: 100%; margin-top: 100px">
     <form> <!-- action="/post_card_info" method="POST">-->
-        Company Name: <input name="CompanyName" type="text"><br><br>
-        Position: <input name="Position" type="text"><br><br>
-        Role: <input name="Role" type="text"><br><br>
-        Contest Type: <input name="ContestType" type="text"><br><br>
-        Start Date: <input name="StartDate" type="date"><br><br>
-        Start Time: <input name="StartTime" type="time"><br><br>
-        End Date: <input name="EndDate" type="date"><br><br>
-        End Time: <input name="EndTime" type="time"><br><br>
-        Company Image: <input name="CompanyImage" type="url"><br><br>
-        Competition Image<input name="CompetitionImage" type="url"><br><br>
-        Company Address: <input name="CompAdd" type="text"><br><br>
-        <button type="submit">Make Entry</button>
+        <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputEmail1"
+                   placeholder="Company Name" name="CompanyName">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"
+                   placeholder="Position" name="Position">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"
+                   placeholder="Role" name="Role">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"
+                   placeholder="Contest Type" name="ContestType">
+        </div>
+        <div class="form-group">
+            Start Date: <input type="date" class="form-control" name="StartDate">
+        </div>
+        <div class="form-group">
+            Start Time<input type="time" class="form-control" name="StartTime">
+        </div>
+        <div class="form-group">
+            End Date: <input type="date" class="form-control" name="EndDate">
+        </div>
+        <div class="form-group">
+            End Time: <input type="time" class="form-control" name="EndTime">
+        </div>
+        <div class="form-group">
+            <input type="url" class="form-control"
+                   placeholder="Company Image" name="CompanyImage">
+        </div>
+        <div class="form-group">
+            <input type="url" class="form-control"
+                   placeholder="Competition Image" name="CompetitionImage">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"
+                   placeholder="Company Address" name="CompAdd">
+        </div>
+        <button type="submit" class="btn btn-primary">Make Entry</button>
     </form>
+</div>
 
 <script>
 
@@ -37,5 +61,4 @@
 
 </script>
 
-</body>
-</html>
+<% include end %>

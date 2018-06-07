@@ -13,6 +13,14 @@ Tasks to be done [ // Done, \\ Dropped, -> Remaining, /\ Paused ]
 /\ Replace polylines with directions: 'https://developers.google.com/maps/documentation/javascript/examples/directions-simple'
 // Change DB schema
 // Put time on cards
+-> Create Basic Login/Signup Interface
+-> Do authentication 'https://medium.com/of-all-things-tech-progress/starting-with-authentication-a-tutorial-with-node-js-and-mongodb-25d524ca0359'
+-> Pop name of signed in user to nav instead of login signup
 -> Make Cards for Prev events
 -> Make Cards for UC eventsslac
 -> Categorise cards live upcmng prev
+_____________________________________________________________________
+
+!-- Project Migrate
+
+-> prevent navbar image from repeat

@@ -1,0 +1,132 @@
+<% include header %>
+
+<div class="d-flex justify-content-center p-2 border-bottom">
+    <div class="p-1 pr-3">Signup and Participate in challenges.</div>
+    <button class="btn btn-sm text-light"
+            style="background-color: coral; max-width: 100px; width: 100%; height: 100%; max-height: 30px">Start
+        Now
+    </button>
+</div> <!-- Sign up Participate -->
+
+<div class="row">
+
+    <div id="left-light-grey" class="border-right col-sm-9"
+         style="background-color: #F2F3F4; padding-top: 35px">
+
+        <div id="light-grey-container" class="float-right container">
+
+            <div id="title_desp"><h3 style="font-family: cursive;">Hackathons, Programming Challenges & Coding
+                    Competitions</h3></div> <!-- hackerearth title -->
+
+            <div id="active-nav" class="border-bottom border-top mt-3 sticky-top"
+                 style="padding-bottom: 10px; width: 90%; max-width: 1100px; background-color: #F2F3F4; margin-left: -10px">
+                <a id="live" data-anav="0" class="a-but pt-1 pr-3 pl-3"
+                   style="cursor: pointer; padding-bottom: 33px; background-color: dodgerblue; clip-path: polygon(100% 0, 100% 66%, 66% 66%, 50% 85%, 36% 66%, 0 66%, 0 0);">LIVE
+                    <span class="badge badge-danger ml-1"> 5</span></a>
+                <a id="upcmng" data-anav="1" class="a-but pt-1 pr-3 pl-3"
+                   style="cursor: pointer; padding-bottom: 33px; clip-path: polygon(100% 0, 100% 66%, 66% 66%, 50% 85%, 36% 66%, 0 66%, 0 0);">UPCOMING
+                    <span class="badge badge-danger ml-1"> 7</span></a>
+                <a id="prev" data-anav="2" class="a-but pt-1 pr-3 pl-3"
+                   style="cursor: pointer; padding-bottom: 33px; clip-path: polygon(100% 0, 100% 66%, 66% 66%, 50% 85%, 36% 66%, 0 66%, 0 0);">PREVIOUS</a>
+            </div> <!-- Upcoming, Active, Previous -->
+
+            <div class="all-cards"> <!-- All sorts of cards -->
+
+                <div class="event-det" data-cardtype="0">
+                    <h5></h5>
+                </div>
+
+                <div id="live-cards" class="mt-4 row">
+
+                    <div class="card bgcard card-dim m-1">
+
+                        <img class="card-img-top img-dim" src=""> <!-- Put Competition Images -->
+
+                        <div class="card-img-overlay img-ol-dim">
+
+                            <div class="row img-ol-dim-sub">
+                                <img style="height: 30px; margin: 5px" src=""> <!-- Put Company Image -->
+                                <p class="text-light comp_name"></p> <!-- Comapny Name -->
+                            </div>
+
+                            <div align="center" class="comp-pos"><span class="p-1" style="background-color: white; color: darkgoldenrod; border-radius: 8px 8px 0px 0px"></span>
+                            </div> <!-- Position -->
+
+                        </div>
+
+                        <div class="card-body cbodybg text-center">
+
+                            <p class="contest-type font-type"></p> <!-- Contest Type  -->
+                            <p class="margt-p"></p> <!-- Role -->
+                            <strong><p class="font-type" style="letter-spacing: 0; margin-top: -5px">ENDS IN</p>
+                            </strong>
+
+                            <div class="font-type row time-dim" style="letter-spacing: 0; font-size: 9px">
+
+                                <div class="p-pad">
+                                    <p class="norm-font days"></p> <!-- Days -->
+                                    <p>DAYS</p>
+                                </div>
+
+                                <div class="p-pad">
+                                    <p class="norm-font"> : </p>
+                                    <p style="color: white">d</p>
+                                </div>
+
+                                <div class="p-pad">
+                                    <p class="norm-font hours"></p> <!-- Hours -->
+                                    <p>HOURS</p>
+                                </div>
+
+                                <div class="p-pad">
+                                    <p class="norm-font"> : </p>
+                                    <p style="color: white">d</p>
+                                </div>
+
+                                <div class="p-pad">
+                                    <p class="norm-font mins"></p> <!-- Minutes -->
+                                    <p>MINUTES</p>
+                                </div>
+
+                            </div>
+
+                            <button class="btn btn-success" style="background-color: chartreuse">START NOW</button>
+
+                        </div>
+                    </div>
+                </div> <!-- Live Cards -->
+
+                <div class="event-det row" data-cardtype="1">
+                    <h5 class="col-sm-3" data-cardtype="1" style="margin-top: 20px; color: #373A33;"><strong>UPCOMING  CHALLENGES</strong></h5>
+                    <div class="col-sm-8 ev-bor"></div>
+                </div>
+
+                <div id="uc-cards" class="mt-4 row">
+
+                </div> <!-- Upcoming Cards -->
+
+                <div class="event-det row" data-cardtype="2">
+                    <h5 class="col-sm-3" data-cardtype="2" style="margin-top: 20px; color: #373A33;"><strong>PREVIOUS CHALLENGES</strong></h5>
+                    <div class="col-sm-8 ev-bor"></div>
+                </div>
+
+                <div id="prev-cards" class="mt-4 row">
+
+                </div> <!-- Previous Cards -->
+
+            </div>
+
+        </div>
+
+    </div> <!-- Headings and Cards -->
+
+    <div id="right-dark-grey"  align="center" class="col-sm-3" style="background-color: #E5E7E9">
+
+        <div id="map-goes-here"></div>
+
+    </div>
+    <!-- To be used for filters -->
+</div> <!-- grey and dark grey -->
+
+<% include footers %>
+<% include end %>

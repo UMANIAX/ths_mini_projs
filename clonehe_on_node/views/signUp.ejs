@@ -1,0 +1,44 @@
+<% include header %>
+
+<div class="container" style="max-width: 500px; width: 100%; margin-top: 100px">
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter username" name="user">
+            <small id="emailHelp" class="form-text text-muted">Make it swanky.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pass">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password Confirmation" name="passConf">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<script>
+
+    $('form').submit(function (event) {
+
+        let URL = '/newUser/signUp_det/';
+        let data_to_post = $('form').serialize()
+
+        $.post(URL, data_to_post, function (data, status, json_info) {
+
+            if (data.redirect === "Passwords Don't Match")
+                alert(data.redirect)
+
+            else
+                window.location = data.redirect
+        })
+
+        return false
+    })
+
+</script>
+
+<% include end %>
